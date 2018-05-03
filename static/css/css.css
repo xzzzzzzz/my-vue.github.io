@@ -1,0 +1,53 @@
+@charset "utf-8";
+body,button,dd,div,dl,dt,form,h1,h2,h3,h4,h5,h6,hr,input,label,li,ol,p,table,tbody,td,textarea,th,thead,tr,ul{margin:0;padding:0}
+body,html{width:100%;background:#f3f8fc;-webkit-user-select:none;-webkit-text-size-adjust:none}
+html{font-size:30px;margin:0; padding:0;}
+body{height:100%;  padding-bottom:3.2666666666666666rem;   position:relative; }
+body,button,html,input,select,textarea{font-size:1rem;color:#444f4f; font-family:Helvetica,Arial,Verdana,sans-serif}
+a{color:#0e2642;text-decoration:none;-webkit-tap-highlight-color:transparent}
+img{max-width:100%;border:0}
+/*input{-webkit-appearance:none}*/
+input:focus{outline:0}
+
+/*背景渐变*/
+.gradient{
+	background: -webkit-linear-gradient(left, #24e9f0 , #2564ef)!important; /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #24e9f0 , #2564ef)!important;/* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #24e9f0 , #2564ef)!important; /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #24e9f0 , #2564ef)!important; /* 标准的语法 */
+	color:#fff!important;
+}
+
+
+/*ios按钮去掉原生样式*/
+input[type=button], input[type=submit], input[type=file], button { cursor: pointer; -webkit-appearance: none; } 
+
+
+
+input::-webkit-input-placeholder {color:#8f8f94;opacity:1;}
+input:-moz-placeholder{color:#8f8f94;opacity:1;}
+input::-moz-placeholder{color:#8f8f94;opacity:1;}
+input:-ms-input-placeholder {color:#8f8f94;opacity:1;}
+.ui-button{ color:#fff; cursor:pointer; height:2.933333333333333rem; line-height:2.933333333333333rem; border-radius:3rem;  font-size:1.0666666666666667rem; text-align:center; 
+	background: -webkit-linear-gradient(left, #24e9f0 , #2564ef); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, #24e9f0 , #2564ef); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, #24e9f0 , #2564ef); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, #24e9f0 , #2564ef); /* 标准的语法 */
+	border:0; display:block; }
+/*==按钮点击变色==*/
+.g-act-taped{background:#fbfbfb;}
+.ui-button[disabled],.ui-button-disabled{background:#979797!important;cursor:default!important;color:#fff!important;}
+table{border-collapse:collapse;border-spacing:0}
+li,ol,ul{list-style:none}
+i{font-style: normal;}
+textarea{resize:none}
+*{-webkit-tap-highlight-color:transparent}
+.fix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.fix{display:inline-block;min-height:1%}
+*html .fix{zoom:1}
+.fix{display:block}
+h1,h2,h3,h4,h5,h6{font-size:1rem; font-weight:normal;}
+
+input[disabled]{opacity:1}
+.fl{float: left;}
+.fr{float: right;}

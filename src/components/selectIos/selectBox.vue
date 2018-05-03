@@ -1,6 +1,6 @@
 <template>
   <div class="pd-select-box" v-show="isShow" @click="hidePd">
-    <div class="pd-select-wrap">
+    <div class="pd-select-wrap"  @click.stop>
       <slot></slot>
     </div>
   </div>

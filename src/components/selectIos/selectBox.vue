@@ -36,5 +36,6 @@
     width: 100%;
     background:rgba(0,0,0,.5);
     height:100%;
+    z-index: 999999;
   }
 </style>

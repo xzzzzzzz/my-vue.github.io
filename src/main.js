@@ -13,7 +13,9 @@ import axios from 'axios'
 import alertBox from './minx/alertBox'
 
 import '../static/scss/select.scss'
+import '../static/css/uploadImg.css'
 import pdSelect from './components/selectIos'
+import upLoadImg from './components/uploadImg'
 
 Vue.use(pdSelect)
 Vue.config.productionTip = false
@@ -23,6 +25,7 @@ Vue.prototype.$http = axios
 Vue.use(ElementUI)
 Vue.use(Vuex)
 Vue.use(alertBox)
+Vue.use(upLoadImg)
 /* eslint-disable no-new */
 
 router.beforeEach((to, from, next) => {

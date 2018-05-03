@@ -64,9 +64,26 @@
           <pd-select-item :listData="listData2" type="cycle" v-model="days"></pd-select-item>
         </pd-select-box>
      </div>
+     <div>
+       <uploadImg></uploadImg>
+     </div>
   </div>
 </template>
 <style scoped>
+.backgroundLine{
+  width: 150px;
+  height: 90px;
+  line-height: 90px;
+  margin:30px auto;
+  font-size:36px;
+  border-radius: 15px;
+  color:#fff;
+  box-shadow: 0 3px 10px #bbdeff;
+  background: -webkit-linear-gradient(right bottom, #459df5 , #6177f0)!important; /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right bottom, #459df5 , #6177f0)!important;/* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right bottom, #459df5 , #6177f0)!important; /* Firefox 3.6 - 15 */
+    background: linear-gradient(right bottom, #459df5 , #6177f0)!important; /* 标准的语法 */
+}
 .invest-top{
   padding:30px
 }

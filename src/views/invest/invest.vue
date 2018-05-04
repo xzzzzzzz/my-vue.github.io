@@ -59,9 +59,9 @@
           </div>
         </div>
         <pd-select-box :show.sync="isSelectShow">
-          <pd-select-item :listData="listData"></pd-select-item>
-          <pd-select-item :listData="listData2"></pd-select-item>
-          <pd-select-item :listData="listData2" type="cycle"></pd-select-item>
+          <pd-select-item :listData="listData" v-model="month"></pd-select-item>
+          <pd-select-item :listData="listData2" v-model="day"></pd-select-item>
+          <pd-select-item :listData="listData2" type="cycle" v-model="days"></pd-select-item>
         </pd-select-box>
      </div>
      <div>
@@ -70,7 +70,7 @@
      <div>
        {{value}}
        <Picker :show="show1"
-    :selectData="pickData2" v-on:cancel="close"
+    :selectData="pickData1" v-on:cancel="close"
     v-on:confirm="finish"></Picker>
      </div>
   </div>
@@ -141,7 +141,7 @@ export default {
       show1: true,
       value: '2222',
       pickData1: {
-        columns: 1, // picker的列数
+        columns: 3, // picker的列数
         default: [
           {
             text: 2002,
@@ -150,6 +150,58 @@ export default {
         ], // 默认显示哪个
         // 第一列的数据结构
         pData1: [
+          {
+            text: 1999,
+            value: 1999
+          },
+          {
+            text: 2001,
+            value: 2001
+          },
+          {
+            text: 2002,
+            value: 2002
+          },
+          {
+            text: 2003,
+            value: 2003
+          },
+          {
+            text: 2004,
+            value: 2004
+          },
+          {
+            text: 2005,
+            value: 2005
+          },
+        ],
+        pData2: [
+          {
+            text: 1999,
+            value: 1999
+          },
+          {
+            text: 2001,
+            value: 2001
+          },
+          {
+            text: 2002,
+            value: 2002
+          },
+          {
+            text: 2003,
+            value: 2003
+          },
+          {
+            text: 2004,
+            value: 2004
+          },
+          {
+            text: 2005,
+            value: 2005
+          },
+        ],
+        pData3: [
           {
             text: 1999,
             value: 1999
@@ -290,7 +342,6 @@ export default {
       this.show1 = false
     },
     finish (value) {
-      console.log(value)
       if(value.select1 != ""){
         this.value = value.select1.text
       }

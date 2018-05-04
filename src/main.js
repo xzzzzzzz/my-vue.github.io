@@ -13,9 +13,11 @@ import axios from 'axios'
 import alertBox from './minx/alertBox'
 
 import '../static/scss/select.scss'
+import '../static/css/css.css'
 import '../static/css/uploadImg.css'
 import pdSelect from './components/selectIos'
 import upLoadImg from './components/uploadImg'
+import Picker from './components/picker'
 
 Vue.use(pdSelect)
 Vue.config.productionTip = false
@@ -26,6 +28,7 @@ Vue.use(ElementUI)
 Vue.use(Vuex)
 Vue.use(alertBox)
 Vue.use(upLoadImg)
+Vue.use(Picker)
 /* eslint-disable no-new */
 
 router.beforeEach((to, from, next) => {

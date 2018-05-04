@@ -12,6 +12,7 @@
   </div>
 </template> 
 <script >
+import * as _ from '../../util/alert'
 export default{
   name: 'upLoadImg',
   data () {
@@ -27,7 +28,12 @@ export default{
       reader.readAsDataURL(img1)
       var that = this
       reader.onloadend=function() {
-        that.imgs.push(reader.result) 
+        if(that.imgs.length >= 3){
+          _.alert('不能超过三张')
+        }else{
+          that.imgs.push(reader.result)
+        }
+         
       }
     }
   }

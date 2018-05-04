@@ -59,13 +59,19 @@
           </div>
         </div>
         <pd-select-box :show.sync="isSelectShow">
-          <pd-select-item :listData="listData" v-model="month"></pd-select-item>
-          <pd-select-item :listData="listData2"  v-model="day"></pd-select-item>
-          <pd-select-item :listData="listData2" type="cycle" v-model="days"></pd-select-item>
+          <pd-select-item :listData="listData"></pd-select-item>
+          <pd-select-item :listData="listData2"></pd-select-item>
+          <pd-select-item :listData="listData2" type="cycle"></pd-select-item>
         </pd-select-box>
      </div>
      <div>
        <uploadImg></uploadImg>
+     </div>
+     <div>
+       {{value}}
+       <Picker :show="show1"
+    :selectData="pickData2" v-on:cancel="close"
+    v-on:confirm="finish"></Picker>
      </div>
   </div>
 </template>
@@ -131,7 +137,120 @@ export default {
       month: 0,
       day: 'customValue0',
       days:'ddd',
-      isSelectShow: false
+      isSelectShow: false,
+      show1: true,
+      value: '2222',
+      pickData1: {
+        columns: 1, // picker的列数
+        default: [
+          {
+            text: 2002,
+            value: 2002
+          }
+        ], // 默认显示哪个
+        // 第一列的数据结构
+        pData1: [
+          {
+            text: 1999,
+            value: 1999
+          },
+          {
+            text: 2001,
+            value: 2001
+          },
+          {
+            text: 2002,
+            value: 2002
+          },
+          {
+            text: 2003,
+            value: 2003
+          },
+          {
+            text: 2004,
+            value: 2004
+          },
+          {
+            text: 2005,
+            value: 2005
+          },
+        ]
+      },
+      pickData2: {
+  columns: 2, // 两列
+  link: true, // 联级必须需要link 参数
+  default: [
+    {
+      text: '水果',
+      value: 2001
+    },
+    {
+        text: '香蕉',
+        value: 105
+    },
+  ], // 默认显示哪个
+   // 第一列数据结构
+  pData1: [
+    {
+      text: '数码',
+      value: 1999
+    },
+    {
+      text: '水果',
+      value: 2001
+    },
+    {
+      text: '衣服',
+      value: 2002
+    }
+  ],
+ // 第二列数据结构
+  pData2: {
+    '1999': [
+      {
+        text: '相机',
+        value: 101
+      },
+      {
+        text: '手机',
+        value: 102
+      },
+      {
+        text: '音箱',
+        value: 103
+      }
+    ],
+    '2001': [
+      {
+        text: '苹果',
+        value: 104
+      },
+      {
+        text: '香蕉',
+        value: 105
+      },
+      {
+        text: '西红柿',
+        value: 106
+      }
+    ],
+    '2002': [
+      {
+        text: '衬衫',
+        value: 107
+      },
+      {
+        text: '短裤',
+        value: 108
+      },
+      {
+        text: '上衣',
+        value: 109
+      }
+    ]
+  }
+},
+
     }
   },
   computed: {
@@ -166,6 +285,22 @@ export default {
     },
     showSelect () {
       this.isSelectShow = true
+    },
+    close () {
+      this.show1 = false
+    },
+    finish (value) {
+      console.log(value)
+      if(value.select1 != ""){
+        this.value = value.select1.text
+      }
+      if(value.select1 != "" && value.select2 != ""){
+        this.value = value.select1.text + '-' +value.select2.text
+      }
+      if(value.select1 != "" && value.select2 != "" && value.select3 != ""){
+        this.value = value.select1.text + '-' + value.select2.text + '-' + value.select3.text
+      }
+      this.close()
     }
   },
   mounted () {

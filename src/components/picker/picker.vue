@@ -1,7 +1,7 @@
 <template>
-  <div id="h-picker">
-    <transition name="fade">
-      <div class="area_ctrl" v-if="show">
+<transition name="fade">
+  <div id="h-picker" class="gearArea"  v-if="show">
+      <div class="area_ctrl">
         <div class="area_btn_box">
           <div class="area_btn larea_cancel" @click="close">取消</div>
           <div class="area_btn larea_finish" @click="finish">确定</div>
@@ -61,9 +61,8 @@
           </div>
         </div>
       </div>
-    </transition>
-    
-  </div>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -352,8 +351,8 @@
 <style scoped>
 .gearArea {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 10px;
-  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.5);
   display: block;
   position: fixed;
   top: 0;
@@ -367,18 +366,21 @@
 }
 .area_ctrl {
   font-size: 12px;
-  vertical-align: middle;
-  background-color: #d5d8df;
-  color: #000;
-  margin: 0;
+  background: -webkit-linear-gradient(left, #24e9f0 , #2564ef)!important; /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #24e9f0 , #2564ef)!important;/* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #24e9f0 , #2564ef)!important; /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #24e9f0 , #2564ef)!important; /* 标准的语法 */
+  color: #fff;
   height: auto;
-  width: 100%;
-  position: absolute;
-  width: 100%;
-  left: 0;
-  bottom: 0;
+  position: fixed;
+  width:39.12em;
+  left: 50%;
+  top:50%;
+  margin-left:-18.16em;
+  vertical-align: middle;
   z-index: 9901;
   overflow: hidden;
+  border-radius: 0.8em;
   /* -webkit-transform: translate3d(0, 100%, 0);
   transform: translate3d(0, 100%, 0) */
 }
@@ -435,8 +437,8 @@
   margin: 0;
   box-sizing: border-box;
   z-index: 0;
-  border-top: 1px solid #abaeb5;
-  border-bottom: 1px solid #abaeb5
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
 }
 .area_roll>div:nth-child(3) .area_grid>div {
   left: 42%
@@ -446,7 +448,9 @@
   font-size: 1.6em;
   line-height: 1em;
   text-align: center;
-  padding: .8em 1em
+  background:#fff;
+  padding: 0.5em;
+  border-radius:0.5em;
 }
 .area_btn_box:before,
 .area_btn_box:after {
@@ -455,7 +459,7 @@
   height: 1px;
   width: 100%;
   display: block;
-  background-color: #96979b;
+  background-color: #fff;
   z-index: 15;
   -webkit-transform: scaleY(0.33);
   transform: scaleY(0.33)
@@ -473,8 +477,13 @@
   -webkit-align-items: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  background-color: #f1f2f4;
-  position: relative
+  background: -webkit-linear-gradient(left, #24e9f0 , #2564ef)!important; /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #24e9f0 , #2564ef)!important;/* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #24e9f0 , #2564ef)!important; /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #24e9f0 , #2564ef)!important; /* 标准的语法 */
+  position: relative;
+  padding:1em 1em;
+  box-sizing: border-box;
 }
 .area_btn_box:before {
   left: 0;

@@ -28,6 +28,7 @@ Vue.use(ElementUI)
 Vue.use(Vuex)
 Vue.use(alertBox)
 Vue.use(upLoadImg)
+// 新的picker
 Vue.use(Picker)
 /* eslint-disable no-new */
 

@@ -1,8 +1,23 @@
 <template>
   <div class="wrap">
     <div class="contents">
+      
+          <div>
+            <div class="setSelect" @click="Show1">
+                <div class="fl">
+                  选择时间
+                </div>
+                <div class="fr">
+                  <span>{{value}}</span>
+                </div>
+              </div>
+            <Picker :show="show1"
+          :selectData="pickData1" v-on:cancel="close"
+          v-on:confirm="finish"></Picker>
+          </div>
       <div class="contents-top">
         <div class="item walking_mode">
+          
           <div class="fl">
             <div class="start">
               行走模式：
@@ -171,6 +186,12 @@
   .wrap-footer .text{
     margin-right:83px;;
   }
+  .setSelect {
+  padding:30px;
+  background: #Fff;
+  height:60px;
+  line-height:60px;
+}
 </style>
 
 <script>
@@ -185,47 +206,94 @@ export default {
       walkingMode : '定点巡航',
       electric : '50%',
       switchs : '按下',
-      chargingState: '桩充成功'
+      chargingState: '桩充成功',
+      
+      show1: false,
+      value: '2222',
+
+      // 新的picker
+      pickData1: {
+        columns: 2, // picker的列数
+        default: [
+          {
+            text: 2002,
+            value: 2002
+          }
+        ], // 默认显示哪个
+        // 第一列的数据结构
+        pData1: [
+          {
+            text: 1999,
+            value: 1999
+          },
+          {
+            text: 2001,
+            value: 2001
+          },
+          {
+            text: 2002,
+            value: 2002
+          },
+          {
+            text: 2003,
+            value: 2003
+          },
+          {
+            text: 2004,
+            value: 2004
+          },
+          {
+            text: 2005,
+            value: 2005
+          },
+        ],
+        pData2: [
+          {
+            text: 1999,
+            value: 1999
+          },
+          {
+            text: 2001,
+            value: 2001
+          },
+          {
+            text: 2002,
+            value: 2002
+          },
+          {
+            text: 2003,
+            value: 2003
+          },
+          {
+            text: 2004,
+            value: 2004
+          },
+          {
+            text: 2005,
+            value: 2005
+          },
+        ]
+      },
     }
   },
   methods: {
-    click () {
-      this.$prompt('请输入邮箱', '提示', {
-        inputPattern: /[a-zA-Z]?/,
-        inputErrorMessage: '邮箱格式不正确'
-      }).then(({ value }) => {
-        this.$instance.show({
-          text: '更改成功',
-          position: 'center'
-        })
-        let newList = {
-          value: value,
-          active: '-1',
-          dataerList: [
-            {
-              time: '9：00',
-              xw: '请选择'
-            }
-          ]
-        }
-        this.dataList.push(newList)
-      }).catch(() => {
-        this.$instance.show({
-          text: '取消更改',
-          position: 'center'
-        })
-      })
+    Show1 () {
+      this.show1 = true
     },
-    set (index) {
-      this.active = index
-      this.childrenList = this.dataList[index].dataerList
+    close () {
+      this.show1 = false
     },
-    dete (index) {
-      this.dataList.splice(index, 1)
-      this.active = 0
-    },
-    alertbox (msg) {
-      _.alert(msg)
+    finish (value) {
+      if(value.select1 != ""){
+        this.value = value.select1.text
+      }
+      if(value.select1 != "" && value.select2 != ""){
+        this.value = value.select1.text + '-' +value.select2.text
+      }
+      if(value.select1 != "" && value.select2 != "" && value.select3 != ""){
+        this.value = value.select1.text + '-' + value.select2.text + '-' + value.select3.text
+      }
+      this.close()
     }
   }
 }

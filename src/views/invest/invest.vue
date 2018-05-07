@@ -68,7 +68,14 @@
        <uploadImg></uploadImg>
      </div>
      <div>
-       {{value}}
+       <div class="setSelect" @click="Show1">
+          <div class="fl">
+            选择时间
+          </div>
+          <div class="fr">
+            <span>{{value}}</span>
+          </div>
+        </div>
        <Picker :show="show1"
     :selectData="pickData1" v-on:cancel="close"
     v-on:confirm="finish"></Picker>
@@ -138,10 +145,12 @@ export default {
       day: 'customValue0',
       days:'ddd',
       isSelectShow: false,
-      show1: true,
+      show1: false,
       value: '2222',
+
+      // 新的picker
       pickData1: {
-        columns: 3, // picker的列数
+        columns: 2, // picker的列数
         default: [
           {
             text: 2002,
@@ -200,109 +209,8 @@ export default {
             text: 2005,
             value: 2005
           },
-        ],
-        pData3: [
-          {
-            text: 1999,
-            value: 1999
-          },
-          {
-            text: 2001,
-            value: 2001
-          },
-          {
-            text: 2002,
-            value: 2002
-          },
-          {
-            text: 2003,
-            value: 2003
-          },
-          {
-            text: 2004,
-            value: 2004
-          },
-          {
-            text: 2005,
-            value: 2005
-          },
         ]
       },
-      pickData2: {
-  columns: 2, // 两列
-  link: true, // 联级必须需要link 参数
-  default: [
-    {
-      text: '水果',
-      value: 2001
-    },
-    {
-        text: '香蕉',
-        value: 105
-    },
-  ], // 默认显示哪个
-   // 第一列数据结构
-  pData1: [
-    {
-      text: '数码',
-      value: 1999
-    },
-    {
-      text: '水果',
-      value: 2001
-    },
-    {
-      text: '衣服',
-      value: 2002
-    }
-  ],
- // 第二列数据结构
-  pData2: {
-    '1999': [
-      {
-        text: '相机',
-        value: 101
-      },
-      {
-        text: '手机',
-        value: 102
-      },
-      {
-        text: '音箱',
-        value: 103
-      }
-    ],
-    '2001': [
-      {
-        text: '苹果',
-        value: 104
-      },
-      {
-        text: '香蕉',
-        value: 105
-      },
-      {
-        text: '西红柿',
-        value: 106
-      }
-    ],
-    '2002': [
-      {
-        text: '衬衫',
-        value: 107
-      },
-      {
-        text: '短裤',
-        value: 108
-      },
-      {
-        text: '上衣',
-        value: 109
-      }
-    ]
-  }
-},
-
     }
   },
   computed: {
@@ -337,6 +245,9 @@ export default {
     },
     showSelect () {
       this.isSelectShow = true
+    },
+    Show1 () {
+      this.show1= true;
     },
     close () {
       this.show1 = false

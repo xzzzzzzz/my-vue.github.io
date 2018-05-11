@@ -4,6 +4,7 @@ import home from '@/views/home'
 import investList from '@/views/invest-list'
 import invest from '@/views/invest'
 import demo from '@/views/demo'
+import input from '@/views/dem'
 // import demoList from '@/views/demo/list'
 
 Vue.use(Router)
@@ -39,6 +40,10 @@ const routes = [
   {
     path: '/demo',
     component: demo
+  },
+  {
+    path: '/input',
+    component: input
   }
 ]
 export default new Router({

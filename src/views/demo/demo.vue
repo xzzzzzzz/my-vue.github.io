@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <div class="contents">
-      
+        <input type="text" v-model="value" maxlength="5">
           <div>
             <div class="setSelect" @click="Show1">
                 <div class="fl">
@@ -274,6 +274,18 @@ export default {
           },
         ]
       },
+    }
+  },
+  watch:{
+    value () {
+      var reg = /^[\u4e00-\u9fa5\.]+$/
+      this.value = this.value.trim()
+      if (!reg.test(this.value)) {
+          return console.log('输入格式错误 只能输入中文')
+      }
+      if(this.value.length >　this.$ref.maxlength){
+        return console.log('最多五个只')
+      }
     }
   },
   methods: {

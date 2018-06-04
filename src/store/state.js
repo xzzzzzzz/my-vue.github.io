@@ -67,20 +67,76 @@ const state = {
     ],
     newList: [
       {
-        content: '关于新手标年化收益率调整的通知',
-        url: 'http://m.xgqq.com/#find/view~id=3720'
-      },
-      {
-        content: '欢度元宵佳节，梦想储蓄罐限时加息0.8%',
-        url: 'http://m.xgqq.com/#find/view~id=3714'
-      },
-      {
-        content: '小狗钱钱2018年清明节放假安排',
-        url: 'http://m.xgqq.com/#find/view~id=3734'
-      },
-      {
-        content: '小狗钱钱2018年清明节放假安排',
-        url: 'http://m.xgqq.com/#find/view~id=3734'
+        'date': '2018-5-2',
+        'task': [{
+          'time': '14:05',
+          'action': 'WorkOn',
+          'place': 'yb'
+        }, {
+          'time': '14:08',
+          'action': 'SpotSearch',
+          'place': '-'
+        }, {
+          'time': '14:10',
+          'action': 'WorkOff',
+          'place': '-'
+        }, {
+          'time': '14:20',
+          'action': 'WorkOn',
+          'place': 'yb'
+        }, {
+          'time': '14:26',
+          'action': 'WorkOff',
+          'place': '-'
+        }]
+      }, {
+        'date': '2018-5-10',
+        'task': [{
+          'time': '11:05',
+          'action': 'WorkOn',
+          'place': 'yb'
+        }, {
+          'time': '14:08',
+          'action': 'SpotSearch',
+          'place': '-'
+        }, {
+          'time': '18:10',
+          'action': 'WorkOff',
+          'place': '-'
+        }, {
+          'time': '18:35',
+          'action': 'WorkOn',
+          'place': 'yb'
+        }, {
+          'time': '20:26',
+          'action': 'WorkOff',
+          'place': '-'
+        }]
+      }, {
+        'date': '2018-5-27',
+        'task': [{
+          'time': '14:05',
+          'action': 'WorkOn',
+          'place': 'yb'
+        }, {
+          'time': '14:08',
+          'action': 'SpotSearch',
+          'place': '-'
+        }, {
+          'time': '14:10',
+          'action': 'WorkOff',
+          'place': '-'
+        },
+        {
+          'time': '14:20',
+          'action': 'WorkOn',
+          'place': 'yb'
+        },
+        {
+          'time': '14:26',
+          'action': 'WorkOff',
+          'place': '-'
+        }]
       }
     ],
     investList: [

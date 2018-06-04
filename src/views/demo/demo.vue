@@ -3,12 +3,12 @@
     <div class="contents">
         <input type="text" v-model="value" maxlength="5">
           <div>
-            <div class="setSelect" @click="Show1">
+            <div class="setSelect">
                 <div class="fl">
                   选择时间
                 </div>
                 <div class="fr">
-                  <span>{{value}}</span>
+                  <el-input  @focus="Show1">{{value}}</el-input>
                 </div>
               </div>
             <Picker :show="show1"
@@ -215,6 +215,10 @@ export default {
       pickData1: {
         columns: 2, // picker的列数
         default: [
+          {
+            text: 2002,
+            value: 2002
+          },
           {
             text: 2002,
             value: 2002
